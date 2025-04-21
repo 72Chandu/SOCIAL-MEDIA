@@ -1,0 +1,51 @@
+.notFound {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4; /* A subtle background color for the page */
+}
+
+.notFoundContainerr {
+    text-align: center;
+    padding: 2vmax;
+    background: white;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow for visual appeal */
+    border-radius: 10px; /* Rounded corners */
+    max-width: 500px;
+    width: 90%;
+}
+
+.notFoundContainer > svg {
+    font-size: 5vmax;
+    color: #f44336; /* Red color for the icon to indicate an error */
+}
+
+.notFoundContainer > h2 {
+    color: #333; /* Neutral text color */
+    font-weight: 700;
+}
+
+.notFoundContainer > a {
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.7);
+    transition: color 0.3s ease;
+}
+
+.notFoundContainer > a:hover {
+    color: #f44336; /* Red color for hover effect */
+}
+
+@media screen and (max-width: 600px) {
+    .notFoundContainerr {
+        padding: 1.5vmax;
+    }
+
+    .notFoundContainer > h2 {
+        font-size: 1.5rem; /* Adjust font size for small screens */
+    }
+
+    .notFoundContainer > svg {
+        font-size: 4vmax; /* Adjust icon size for small screens */
+    }
+}

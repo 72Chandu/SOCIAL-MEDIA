@@ -1,0 +1,72 @@
+.commentUser {
+    display: flex;
+    flex-wrap: wrap; /* Ensures proper alignment if elements overflow */
+    align-items: center;
+    justify-content: space-between; /* Space between elements for better distribution */
+    color: rgba(0, 0, 0, 0.507);
+    padding: 1vmax;
+    background: #f4f4f4; /* Light background for the card */
+    border-radius: 8px; /* Rounded corners for a modern look */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow for elevation */
+    margin: 1vmax 0;
+}
+
+.commentUser > a {
+    display: flex;
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    align-items: center;
+    transition: all 0.5s;
+}
+
+.commentUser > a:hover {
+    transform: translateY(-5px); /* Subtle hover effect */
+}
+
+.commentUser img {
+    height: 3vmax;
+    width: 3vmax;
+    margin: 1vmax;
+    border-radius: 100%;
+    border: 3px solid rgb(255, 201, 201);
+    object-fit: cover; /* Ensures the image fits nicely within the container */
+}
+
+.commentUser > button {
+    color: red;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.commentUser > button:hover {
+    color: #ff6347; /* Lighter red on hover */
+}
+
+.commentUser > h6 {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #333;
+}
+
+@media screen and (max-width: 600px) {
+    .commentUser {
+        flex-direction: column; /* Stack elements vertically on smaller screens */
+        align-items: center;
+    }
+
+    .commentUser img {
+        height: 4vmax; /* Slightly larger avatar for better visibility */
+        width: 4vmax;
+    }
+
+    .commentUser > a {
+        justify-content: center;
+        margin-bottom: 0.5vmax;
+    }
+
+    .commentUser > button {
+        margin-top: 0.5vmax;
+    }
+}

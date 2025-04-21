@@ -1,0 +1,27 @@
+.loader {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full-screen height */
+    background-color: #f4f4f4; /* Light gray background for a modern look */
+}
+
+.loader > svg {
+    color: #1976d2; /* Material-UI default blue */
+    animation: spin 1.5s infinite linear; /* Adds a smooth spinning effect */
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.loader > h6 {
+    color: #333; /* Neutral color for the text */
+    font-weight: 500;
+}
