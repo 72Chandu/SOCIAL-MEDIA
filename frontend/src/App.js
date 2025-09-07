@@ -16,27 +16,33 @@ import ResetPassword from './Components/ResetPassword/ResetPassword';
 import UserProfile from './Components/UserProfile/UserProfile';
 import Search from './Components/Search/Search';
 import NotFound from './Components/NotFound/NotFound';
+
 function App() {
   const dispatch = useDispatch();
   const { isAuthenticated } = useSelector((state) => state.user);
+
   useEffect(() => {
     dispatch(loadUser());
   }, [dispatch]);
+
   return (
     <Router>
       {isAuthenticated && <Header />}
-      <Routes><Route path="/" element={isAuthenticated ? <Home/> :<Login />} /></Routes>
-      <Routes><Route path="/account" element={isAuthenticated ? <Account/> :<Login/>} /></Routes>
-      <Routes><Route path="/register" element={isAuthenticated ? <Account/> :<Register/>} /></Routes>
-      <Routes><Route path="/newpost" element={isAuthenticated ? <NewPost/> :<Login/>} /></Routes>
-      <Routes><Route path="/update/profile" element={isAuthenticated ? <UpdateProfile/> :<Login/>} /></Routes>
-      <Routes><Route path="/update/password" element={isAuthenticated ? <UpdatePassword/> :<Login/>} /></Routes>
-      <Routes><Route path="/forgot/password" element={isAuthenticated ? <UpdatePassword/> :<ForgotPassword/>} /></Routes>
-      <Routes><Route path="/password/reset/:token" element={<ResetPassword/>} /></Routes>
-      <Routes><Route path="/user/:id" element={isAuthenticated ? <UserProfile/> :<Login/>} /></Routes>
-      <Routes><Route path="search" element={isAuthenticated ? <Search/> :<Login/> } /></Routes>
-      <Routes><Route path="*" element={<NotFound/>} /></Routes>
+      <Routes>
+        <Route path="/" element={isAuthenticated ? <Home /> : <Login />} />
+        <Route path="/account" element={isAuthenticated ? <Account /> : <Login />} />
+        <Route path="/register" element={isAuthenticated ? <Account /> : <Register />} />
+        <Route path="/newpost" element={isAuthenticated ? <NewPost /> : <Login />} />
+        <Route path="/update/profile" element={isAuthenticated ? <UpdateProfile /> : <Login />} />
+        <Route path="/update/password" element={isAuthenticated ? <UpdatePassword /> : <Login />} />
+        <Route path="/forgot/password" element={isAuthenticated ? <UpdatePassword /> : <ForgotPassword />} />
+        <Route path="/password/reset/:token" element={<ResetPassword />} />
+        <Route path="/user/:id" element={isAuthenticated ? <UserProfile /> : <Login />} />
+        <Route path="/search" element={isAuthenticated ? <Search /> : <Login />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
     </Router>
   );
 }
+
 export default App;
